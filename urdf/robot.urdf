@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+<robot name="robot">
+	<link name="base_link">
+		<visual>
+			<origin xyz="0.0 0.0 0" rpy="0 3.14159265359 0"/>
+			<geometry>
+				<mesh filename="package://robp_description/meshes/chassis.stl" scale="0.02824858757 0.02824858757 0.02824858757"/>
+			</geometry>
+			<material name="aluminium">
+				<texture filename="package://robp_description/textures/aluminium.jpg"/>
+			</material>
+		</visual>
+		<visual>
+			<origin xyz="0.0 0.0 0" rpy="0 3.14159265359 0"/>
+			<geometry>
+				<mesh filename="package://robp_description/meshes/engines.stl" scale="0.02824858757 0.02824858757 0.02824858757"/>
+			</geometry>
+			<material name="">
+				<color rgba="0 0 0 1" />
+			</material>
+		</visual>
+		<visual>
+			<origin xyz="0.0 0.0 0" rpy="0 3.14159265359 0"/>
+			<geometry>
+				<mesh filename="package://robp_description/meshes/Phidgets.stl" scale="0.02824858757 0.02824858757 0.02824858757"/>
+			</geometry>
+			<material name="">
+				<color rgba="0 0 0 1" />
+			</material>
+		</visual>
+		<visual>
+			<origin xyz="0.0 0.0 0" rpy="0 3.14159265359 0"/>
+			<geometry>
+				<mesh filename="package://robp_description/meshes/NUC_fixture_withnuc.stl" scale="0.02824858757 0.02824858757 0.02824858757"/>
+			</geometry>
+			<material name="">
+				<color rgba="0 0 0 1" />
+			</material>
+		</visual>
+		<visual>
+			<origin xyz="0.0 0.0 0" rpy="0 3.14159265359 0"/>
+			<geometry>
+				<mesh filename="package://robp_description/meshes/rearWheels.stl" scale="0.02824858757 0.02824858757 0.02824858757"/>
+			</geometry>
+			<material name="">
+				<color rgba="0 0 0 1" />
+			</material>
+		</visual>
+		<visual>
+			<origin xyz="0.0 0.0 0" rpy="0 3.14159265359 0"/>
+			<geometry>
+				<mesh filename="package://robp_description/meshes/FrontWheels.stl" scale="0.02824858757 0.02824858757 0.02824858757"/>
+			</geometry>
+			<material name="">
+				<color rgba="0 0 0 1" />
+			</material>
+		</visual>
+		<visual>
+			<origin xyz="0.0 0.0 0" rpy="0 3.14159265359 0"/>
+			<geometry>
+				<mesh filename="package://robp_description/meshes/distanser.stl" scale="0.02824858757 0.02824858757 0.02824858757"/>
+			</geometry>
+			<material name="">
+				<color rgba="0 0 0 1" />
+			</material>
+		</visual>
+		<visual>
+			<origin xyz="0.0 0.0 0" rpy="0 3.14159265359 0"/>
+			<geometry>
+				<mesh filename="package://robp_description/meshes/GPU_fixture_withcard.stl" scale="0.02824858757 0.02824858757 0.02824858757"/>
+			</geometry>
+			<material name="">
+				<color rgba="0 0 0 1" />
+			</material>
+		</visual>
+	</link>
+
+	<link name="camera_link">
+		<visual>
+			<origin xyz="0.0 0.0 0" rpy="1.57079632679 0.0 1.57079632679"/>
+			<geometry>
+				<mesh filename="package://realsense2_description/meshes/d435.dae"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<link name="imu_link">
+	</link>
+
+	<joint name="base_to_camera" type="fixed">
+		<origin xyz="0.08987 0.0175 0.10456" rpy="0.0 0.0 0.0"/>
+		<parent link="base_link"/>
+		<child link="camera_link"/>
+	</joint>
+
+	<joint name="base_to_imu" type="fixed">
+		<origin xyz="0.00107 0 0.02361" rpy="0.0 0.0 0.0"/>
+		<parent link="base_link"/>
+		<child link="imu_link"/>
+	</joint>
+</robot>

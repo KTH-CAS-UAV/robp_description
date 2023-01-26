@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robp_description</name>
+  <version>1.0.0</version>
+  <description>The robp_description package</description>
+
+  <maintainer email="dduberg@kth.se">Daniel Duberg</maintainer>
+
+  <license>MIT</license>
+
+  <url type="website">https://github.com/KTH-CAS-UAV/robp_boot_camp</url>
+
+  <author email="dduberg@kth.se">Daniel Duberg</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>xacro</exec_depend>
+</package>
